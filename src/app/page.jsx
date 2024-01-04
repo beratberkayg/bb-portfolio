@@ -1,4 +1,5 @@
 import Background from "@/components/Background";
+
 import React from "react";
 
 const Home = () => {
