@@ -6,7 +6,7 @@ const Links = () => {
   const links = [
     { name: "Ana Sayfa", url: "/" },
     { name: "Projeler", url: "/projeler" },
-    { name: "Hakkımda", url: "/hakkimda" },
+
     { name: "İletişim", url: "/iletisim" },
   ];
 

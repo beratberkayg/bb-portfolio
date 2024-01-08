@@ -10,30 +10,13 @@ const Home = () => {
     setAge(calculatedAge);
   }, []);
   return (
-    <div className=" py-5 text-xl">
-      <p>{age} yaşındayım.</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
-      <p>Berkay Gökdemir</p>
-      <p>Ben Berat</p>
+    <div className="w-full py-3 px-3 text-lg lg:text-4xl text-right">
+      <p>
+        Merhaba ben Berat Berkay Gökdemir, {age} yaşındayım. Web teknolojileri
+        alanındaki yenilikleri takip ederek kendimi sürekli olarak
+        geliştiriyorum. Web tasarımı ve kodlama alanındaki yeteneklerimi
+        güçlendirmek adına yoğun bir şekilde çalışıyorum.
+      </p>
     </div>
   );
 };

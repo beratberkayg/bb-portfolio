@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       >
         <div className="border border-white border-opacity-50 w-full h-full overflow-hidden relative ">
           <Header />
-          <section className="">{children}</section>
+          <section className="absolute bottom-0 right-0 h-2/3 w-1/2 overflow-hidden overflow-y-auto md:flex md:items-end">
+            {children}
+          </section>
         </div>
       </body>
     </html>
