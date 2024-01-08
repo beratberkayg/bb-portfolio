@@ -2,16 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+:root {
+  --pad: max(20px, 4vmin);
+  --vh: 1.4000000000000001px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: var(--pad);
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 95%);
+}
+
+.page {
+  position: absolute;
+  right: calc(var(--pad) * 2);
+  bottom: -50px;
+  min-height: calc(var(--vh, 1vh) * 100);
+  border: 1px solid red;
 }

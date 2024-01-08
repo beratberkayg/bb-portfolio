@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import Title from "@/components/Title";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +13,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} `}>{children}</body>
+      <body
+        className={`${font.className} w-full h-screen  flex justify-center items-center  `}
+      >
+        <div className="border border-white border-opacity-50 w-full h-full overflow-hidden relative ">
+          <Header />
+          <section className="">{children}</section>
+        </div>
+      </body>
     </html>
   );
 }
