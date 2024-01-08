@@ -25,7 +25,7 @@ const Projeler = () => {
     },
   ];
   return (
-    <div className="w-full py-3 px-3 gap-5 lg:gap-10  flex flex-col">
+    <div className="w-full py-3 px-3 lg:px-20 gap-5 lg:gap-10 text-right flex flex-col cursor-pointer ">
       {project.map((item, i) => (
         <div key={i} className="hover:text-gray-300 hover:text-opacity-50">
           <a className="text-2xl lg:text-4xl" href={item.url} target="_blank">
