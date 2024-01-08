@@ -25,13 +25,17 @@ const Projeler = () => {
     },
   ];
   return (
-    <div className="w-full py-3 px-3 lg:px-20 gap-5 lg:gap-10 text-right flex flex-col cursor-pointer ">
+    <div className="project">
       {project.map((item, i) => (
         <div key={i} className="hover:text-gray-300 hover:text-opacity-50">
-          <a className="text-2xl lg:text-4xl" href={item.url} target="_blank">
+          <a
+            className="text-[7vw] md:text-[6vw]"
+            href={item.url}
+            target="_blank"
+          >
             {item.name}
           </a>
-          <p>{item.desc}</p>
+          <p className="mt-2">{item.desc}</p>
         </div>
       ))}
     </div>
