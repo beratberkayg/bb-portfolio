@@ -13,14 +13,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${font.className} w-full h-screen  flex justify-center items-center  `}
-      >
-        <div className="border border-white border-opacity-50 w-full h-full overflow-hidden relative ">
+      <body className={`${font.className}`}>
+        <div id="Page">
+          <div className="mask">
+            <div className="mask_top"></div>
+            <div className="mask_bottom"></div>
+          </div>
+          <div className="frame">
+            <div className="frame_line frame_line-left"></div>
+            <div className="frame_line frame_line-right"></div>
+            <div className="frame_line frame_line-top"></div>
+            <div className="frame_line frame_line-bottom"></div>
+          </div>
+          <div className="theme">
+            <div className="theme_btn">
+              <div className="_box"></div>
+              <div className="_text">Lıght</div>
+            </div>
+            <div className="theme_btn">
+              <div className="_box"></div>
+              <div className="_text">Dark</div>
+            </div>
+          </div>
           <Header />
-          <section className="absolute bottom-0 right-0 h-2/3 md:h-4/5 w-1/2 overflow-hidden overflow-y-auto md:flex md:items-end ">
-            {children}
-          </section>
+          <main className="content"></main>
         </div>
       </body>
     </html>

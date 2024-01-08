@@ -14,15 +14,22 @@ const Links = () => {
   console.log(pathname);
 
   return (
-    <div className="px-1 mt-10 flex flex-col gap-2">
-      {links.map((link, i) => (
-        <Link
-          className=" hover:text-gray-300 hover:text-opacity-50 text-2xl transition-all"
-          key={i}
-          href={link.url}
-        >
+    <div className="header_nav">
+      {/* {links.map((link, i) => (
+        <Link className="nav_text " key={i} href={link.url}>
           {pathname.toString() === link.url ? "●" : link.name}
         </Link>
+      ))} */}
+      {links.map((link, i) => (
+        <li
+          className={`${pathname.toString() === link.url ? "is_selected" : ""}`}
+          key={i}
+        >
+          <div className="_dot">●</div>
+          <Link className="_text" href={link.url}>
+            {link.name}
+          </Link>
+        </li>
       ))}
     </div>
   );

@@ -9,16 +9,7 @@ const Home = () => {
     const calculatedAge = currentYear - birthYear;
     setAge(calculatedAge);
   }, []);
-  return (
-    <div className="w-full py-3 px-3 text-lg lg:text-4xl text-right">
-      <p>
-        Merhaba ben Berat Berkay Gökdemir, {age} yaşındayım. Web teknolojileri
-        alanındaki yenilikleri takip ederek kendimi sürekli olarak
-        geliştiriyorum. Web tasarımı ve kodlama alanındaki yeteneklerimi
-        güçlendirmek adına yoğun bir şekilde çalışıyorum.
-      </p>
-    </div>
-  );
+  return <div>sadsad</div>;
 };
 
 export default Home;
