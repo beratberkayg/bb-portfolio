@@ -13,13 +13,13 @@ const Background = () => {
       75,
       window.innerWidth / window.innerHeight,
       1,
-      1000
+      100
     );
 
     // Renderer'ı oluştur ve DOM'a ekleyin, alpha özelliğini true olarak ayarlayın
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById("three-canvas").appendChild(renderer.domElement);
+    document.getElementById("Background").appendChild(renderer.domElement);
 
     // Grid üzerine noktaları yerleştir
     const numPoints = 3000;
@@ -30,7 +30,7 @@ const Background = () => {
     const colors = new Float32Array(numPoints * 3);
 
     for (let i = 0; i < numPoints; i++) {
-      const x = (Math.random() - 0.5) * gridSize;
+      const x = (Math.random() - 1) * gridSize;
       const y = (Math.random() - 0.5) * gridSize;
       const z = (Math.random() - 0.5) * gridSize;
 
@@ -60,24 +60,14 @@ const Background = () => {
     // Kamera pozisyonunu ayarla
     camera.position.z = 5;
 
-    // Sayfa stilini kontrol etmek için bir kontrol fonksiyonu ekle
-    const checkPageColor = () => {
-      const bodyBackgroundColor = window
-        .getComputedStyle(document.body)
-        .getPropertyValue("background-color");
-
-      // Body'nin arkaplan rengine göre nokta renklerini güncelle
-      if (bodyBackgroundColor === "rgb(255, 255, 255)") {
-        pointsMaterial.color.setHex(0xffffff); // Siyah renk
-      } else {
-        pointsMaterial.color.setHex(0xffffff); // Beyaz renk
-      }
-    };
-
     // Sayfa yüklendiğinde ve boyutu değiştiğinde kontrol fonksiyonunu çağır
-    checkPageColor();
-    window.addEventListener("load", checkPageColor);
-    window.addEventListener("resize", checkPageColor);
+
+    window.addEventListener("resize", () => {
+      // Ekran boyutu değiştiğinde kamera ve renderer boyutlarını güncelle
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 
     // Animasyon fonksiyonunu oluşturun
     const animate = () => {
@@ -85,8 +75,8 @@ const Background = () => {
 
       // Noktaları yavaşça hareket ettir
       const time = Date.now() * 0.001;
-      const amplitude = 1;
-      const frequency = 0.5;
+      const amplitude = 0.7;
+      const frequency = 1;
 
       for (let i = 0; i < numPoints; i++) {
         const x = pointsGeometry.attributes.position.array[i * 3];
@@ -109,16 +99,11 @@ const Background = () => {
     // Temizlik işlemleri (componentWillUnmount)
     return () => {
       renderer.dispose();
-      document.getElementById("three-canvas").removeChild(renderer.domElement);
-      window.removeEventListener("resize", checkPageColor);
+      document.getElementById("Background").removeChild(renderer.domElement);
     };
   }, []); // Bu boş dependency array ile sadece mount ve unmount anlarında çalışır
 
-  return (
-    <div id="Background">
-      <div id="three-canvas" style={{ position: "relative" }} className="" />
-    </div>
-  );
+  return <div id="Background"></div>;
 };
 
 export default Background;
