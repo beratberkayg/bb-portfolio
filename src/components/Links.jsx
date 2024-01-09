@@ -11,15 +11,9 @@ const Links = () => {
   ];
 
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <div className="header_nav">
-      {/* {links.map((link, i) => (
-        <Link className="nav_text " key={i} href={link.url}>
-          {pathname.toString() === link.url ? "●" : link.name}
-        </Link>
-      ))} */}
       {links.map((link, i) => (
         <li
           className={`${pathname.toString() === link.url ? "is_selected" : ""}`}
