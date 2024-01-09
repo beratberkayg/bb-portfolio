@@ -23,8 +23,6 @@ const Theme = () => {
     }
   }, [theme]);
 
-  console.log(theme);
-
   return (
     <div className="theme">
       <div onClick={changeTheme} className="theme_btn">
