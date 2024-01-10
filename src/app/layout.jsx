@@ -3,7 +3,8 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Theme from "@/components/Theme";
-import Background from "@/components/Background";
+
+import Test from "@/components/Test";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${font.className} `}>
         <div id="Page" className="page">
-          <Background />
+          <Test />
           <div className="mask">
             <div id="Mask_Top" className="mask_top"></div>
             <div id="Mask_Bottom" className="mask_bottom"></div>

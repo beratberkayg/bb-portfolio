@@ -43,7 +43,7 @@ body {
   transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 }
 
-#Background {
+.background {
   position: fixed;
   z-index: 1;
   left: var(--pad);

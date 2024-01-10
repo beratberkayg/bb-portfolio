@@ -27,11 +27,7 @@ const Hakkimda = () => {
     <div className="project">
       {contact.map((item, i) => (
         <div key={i} className="hover:text-gray-300 hover:text-opacity-50">
-          <a
-            className="text-[8vw] md:text-[6vw]"
-            href={item.url}
-            target="_blank"
-          >
+          <a className="text-[5vw]" href={item.url} target="_blank">
             {item.name}
           </a>
           <div className="text-[3vw] md:text-[14px] mt-2">{item.desc}</div>

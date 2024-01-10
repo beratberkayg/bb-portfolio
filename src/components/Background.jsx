@@ -103,7 +103,7 @@ const Background = () => {
     };
   }, []); // Bu boş dependency array ile sadece mount ve unmount anlarında çalışır
 
-  return <div id="Background"></div>;
+  return <div id="Background" className="background"></div>;
 };
 
 export default Background;
