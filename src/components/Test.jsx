@@ -14,7 +14,7 @@ const Test = () => {
       0.1,
       1000
     );
-    camera.position.z = 0.5;
+    camera.position.z = 1;
 
     // Renderer'ı oluştur ve DOM'a ekleyin
     const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -22,12 +22,12 @@ const Test = () => {
     document.getElementById("test").appendChild(renderer.domElement);
 
     // Küre geometrisi oluştur ve detail değerini artır
-    const geometry = new THREE.SphereGeometry(1, 64, 64);
+    const geometry = new THREE.SphereGeometry(1, 32, 32);
     // Temel renkli malzeme oluştur
     const material = new THREE.PointsMaterial({
-      // color: 0xffffff, // Başlangıç rengi beyaz
+      color: 0xffffff, // Başlangıç rengi beyaz
       size: 0.005,
-      vertexColors: THREE.VertexColors,
+      // vertexColors: THREE.VertexColors,
     });
 
     // Kürenin noktalarını içeren Points objesini oluştur
@@ -48,7 +48,7 @@ const Test = () => {
 
       // Küreyi döndür
 
-      points.rotation.y += 0.05;
+      points.rotation.y += 0.001;
 
       // Sahneyi render et
       renderer.render(scene, camera);
