@@ -13,7 +13,7 @@ const Background = () => {
       75,
       window.innerWidth / window.innerHeight,
       1,
-      100
+      1000
     );
 
     // Renderer'ı oluştur ve DOM'a ekleyin, alpha özelliğini true olarak ayarlayın
@@ -30,7 +30,7 @@ const Background = () => {
     const colors = new Float32Array(numPoints * 3);
 
     for (let i = 0; i < numPoints; i++) {
-      const x = (Math.random() - 1) * gridSize;
+      const x = (Math.random() - 0.5) * gridSize;
       const y = (Math.random() - 0.5) * gridSize;
       const z = (Math.random() - 0.5) * gridSize;
 

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Theme from "@/components/Theme";
 
 import Test from "@/components/Test";
+import PreLoader from "@/components/PreLoader";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${font.className} `}>
+        <PreLoader />
         <div id="Page" className="page">
           <Test />
           <div className="mask">
