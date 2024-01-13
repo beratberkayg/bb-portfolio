@@ -27,7 +27,7 @@ const PreLoader = () => {
       <div
         className={`text-[25px] md:text-[35px] text-center font-normal transition-opacity duration-500  ease-in-out opacity-${textOpacity}`}
       >
-        Berat Berkay <span className="font-extralight">Portföy</span>
+        Berat Berkay <span className="font-extralight">Portfolyo</span>
       </div>
     </div>
   );
